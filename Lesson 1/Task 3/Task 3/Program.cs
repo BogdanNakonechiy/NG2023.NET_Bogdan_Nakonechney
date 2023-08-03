@@ -6,20 +6,20 @@ namespace Task_3
     {
         static void Main(string[] args)
         {
-            int[] numbersArr = new int[10];
+            string numbers;
+            char[] numbersArr = new char[11];
 
-            for(int numbCount = 0; numbCount <= numbersArr.Length - 1; numbCount++)
-            {
-                Console.Write($"Enter numb {numbCount + 1} > ");
-                int.TryParse(Console.ReadLine(), out numbersArr[numbCount]);
-            }
+            Console.Write("Enter string > ");
+            numbers = Console.ReadLine();
 
-            Console.Write("Array > ");
-            for(int numbCount = 0; numbCount <= numbersArr.Length - 1; numbCount++)
-            {
+            for (int numbCount = 0; numbCount < numbersArr.Length - 1; numbCount++)
+                numbersArr[numbCount] = numbers[numbCount];
+
+            Console.Write("Array numb > ");
+            for(int numbCount = 0; numbCount < numbersArr.Length - 1; numbCount++)
                 Console.Write(numbersArr[numbCount] + " ");
-            }
-            Console.WriteLine();
+
+            Console.WriteLine("\n");
         }
     }
 }
