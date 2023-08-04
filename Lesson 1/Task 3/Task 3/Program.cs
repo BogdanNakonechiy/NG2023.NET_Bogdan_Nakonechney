@@ -7,19 +7,21 @@ namespace Task_3
         static void Main(string[] args)
         {
             string numbers;
-            char[] numbersArr = new char[11];
+            string[] symbolArr = new string[10];
+            int[] numbArr = new int[10];
 
-            Console.Write("Enter string > ");
+            Console.Write("Enter > ");
             numbers = Console.ReadLine();
 
-            for (int numbCount = 0; numbCount < numbersArr.Length - 1; numbCount++)
-                numbersArr[numbCount] = numbers[numbCount];
+            symbolArr = numbers.Split(' ');
 
-            Console.Write("Array numb > ");
-            for(int numbCount = 0; numbCount < numbersArr.Length - 1; numbCount++)
-                Console.Write(numbersArr[numbCount] + " ");
+            for(int numbCount = 0; numbCount < symbolArr.Length; numbCount++)
+                numbArr[numbCount] = Convert.ToInt32(symbolArr[numbCount]);
 
-            Console.WriteLine("\n");
+            Console.WriteLine("Numbers");
+            foreach(var numb in numbArr)
+                Console.WriteLine(numb);
+            Console.WriteLine();
         }
     }
 }
